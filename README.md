@@ -9,15 +9,25 @@
 - Dự đoán khả năng trả nợ của khách hàng dựa trên 10 thông tin:
 
 Tỷ lệ sử dụng hạn mức tín dụng không đảm bảo
+
 Tuổi của khách hàng
+
 Số lần trễ hạn thanh toán từ 30–59 ngày
+
 Tỷ lệ nợ trên thu nhập
+
 Thu nhập hàng tháng
+
 Số lượng khoản vay và hạn mức tín dụng đang mở
+
 Số lần trễ hạn thanh toán từ 90 ngày trở lên
+
 Số khoản vay liên quan đến bất động sản
+
 Số lần trễ hạn thanh toán từ 60–89 ngày
+
 Số người phụ thuộc (con cái, người thân...)
+
 - Hiển thị kết quả: ✅ Khách hàng có khả năng trả nợ tốt, ❌ Khách hàng có nguy cơ vỡ nợ
 
 ---
