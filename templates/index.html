@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="form-section">
                     <label>Tỷ lệ sử dụng tín dụng không đảm bảo</label>
-                    <input type="number" step="0.01" name="RevolvingUtilization" class="form-control"
+                    <input type="number" step="any" name="RevolvingUtilization" class="form-control"
                            value="{{ form_data.RevolvingUtilization if form_data else '' }}" required>
                 </div>
                 <div class="form-section">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-section">
                     <label>Tỷ lệ nợ trên thu nhập</label>
-                    <input type="number" step="0.01" name="DebtRatio" class="form-control"
+                    <input type="number" step="any"" name="DebtRatio" class="form-control"
                            value="{{ form_data.DebtRatio if form_data else '' }}" required>
                 </div>
                 <div class="form-section">
