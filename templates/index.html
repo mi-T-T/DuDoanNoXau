@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán tín dụng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="container mt-5">
+    <h2 class="mb-4">Thông tin khách hàng</h2>
+
+    {% if result %}
+        <div class="alert alert-info">{{ result }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-section">
+                    <label>Tỷ lệ sử dụng tín dụng không đảm bảo</label>
+                    <input type="number" step="0.01" name="RevolvingUtilization" class="form-control"
+                           value="{{ form_data.RevolvingUtilization if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Tuổi</label>
+                    <input type="number" name="Age" class="form-control"
+                           value="{{ form_data.Age if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Số lần trễ hạn 30–59 ngày</label>
+                    <input type="number" name="PastDue30_59" class="form-control"
+                           value="{{ form_data.PastDue30_59 if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Tỷ lệ nợ trên thu nhập</label>
+                    <input type="number" step="0.01" name="DebtRatio" class="form-control"
+                           value="{{ form_data.DebtRatio if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Thu nhập hàng tháng</label>
+                    <input type="number" name="MonthlyIncome" class="form-control"
+                           value="{{ form_data.MonthlyIncome if form_data else '' }}" required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-section">
+                    <label>Số khoản vay/hạn mức tín dụng đang mở</label>
+                    <input type="number" name="OpenCreditLines" class="form-control"
+                           value="{{ form_data.OpenCreditLines if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Số lần trễ hạn từ 90 ngày trở lên</label>
+                    <input type="number" name="Late90" class="form-control"
+                           value="{{ form_data.Late90 if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Số khoản vay bất động sản</label>
+                    <input type="number" name="RealEstateLoans" class="form-control"
+                           value="{{ form_data.RealEstateLoans if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Số lần trễ hạn 60–89 ngày</label>
+                    <input type="number" name="PastDue60_89" class="form-control"
+                           value="{{ form_data.PastDue60_89 if form_data else '' }}" required>
+                </div>
+                <div class="form-section">
+                    <label>Số người phụ thuộc</label>
+                    <input type="number" name="Dependents" class="form-control"
+                           value="{{ form_data.Dependents if form_data else '' }}" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Dự đoán</button>
+        </div>
+    </form>
+</body>
+</html>
